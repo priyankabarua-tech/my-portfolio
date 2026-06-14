@@ -146,7 +146,7 @@ nav .navbar-nav {
     }
 
     100% {
-        transform: translateX(90vw) translateY(40vh) rotate(25deg);
+        transform: translateX(90vw) translateY(50vh) rotate(25deg);
         opacity: 0;
     }
 }
@@ -991,7 +991,7 @@ footer .footer_bottom p {
         }
 
         100% {
-            transform: translateX(70vw) translateY(40vh) rotate(25deg);
+            transform: translateX(70vw) translateY(30vh) rotate(25deg);
             opacity: 0;
         }
     }
@@ -1091,6 +1091,9 @@ footer .footer_bottom p {
     nav .navbar-nav {
         gap: 0px;
     }
+    #banner{
+        width:auto;
+    }
 
     @keyframes shoot {
         0% {
@@ -1099,7 +1102,7 @@ footer .footer_bottom p {
         }
 
         100% {
-            transform: translateX(80vw) translateY(50vh) rotate(25deg);
+            transform: translateX(80vw) translateY(40vh) rotate(25deg);
             opacity: 0;
         }
     }
