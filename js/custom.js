@@ -4,6 +4,17 @@ $(".navbar .navbar-nav li a").click(function () {
     $(this).addClass("active");
 });
 
+$('.resume_btn').on('click',function(){
+    var oldText = $(this).html();
+    console.log(oldText);
+    $(this).text("Downloaded!").addClass('resume_btn_download');
+    if($(this).hasClass('resume_btn_download')===true){
+        setTimeout(()=>{
+            $(this).html(oldText).removeClass('resume_btn_download');
+        },8000);
+    }
+});
+
 $(document).on('scroll', function () {
     var scrollHeight = $(window).scrollTop();
 
@@ -52,20 +63,31 @@ $(window).on('scroll', function () {
     console.log(wS);
     var a = (hT - wH + 100);
     console.log(a);
+    var hH = $('#skills').outerHeight();
+    var section_bottom = hT + hH
 
     //triggers when the top of the section enters the bottom of the viewport
-    if (wS > a) {
+    if ((wS > a) && (wS < section_bottom)) {
         $('#skills .skill-bar').each(function () {
-            var b = $(this).attr('data-width');
-            console.log(b);
-            $(this).html("<span>" + b + "</span>");
-            $(this).animate({
-                width: $(this).attr('data-width'),
-            }, 2000, 'swing');
+
+             if ($(this).width() === 0 || $(this).css('width') === '0px') {
+                var b = $(this).attr('data-width');
+                console.log(b);
+                $(this).html("<span>" + b + "</span>");
+                $(this).stop().animate({
+                    width: $(this).attr('data-width'),
+                }, 2000, 'swing');
+             }
+
         });
 
         //unbind scroll event so it only animate once
-        $(window).off('scroll');
+        //$(window).off('scroll');
+    }
+    else{
+        $('#skills .skill-bar').each(function () {
+            $(this).stop().css('width', '0');
+        });
     }
 
 });
