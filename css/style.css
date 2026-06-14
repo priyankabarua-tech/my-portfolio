@@ -1091,9 +1091,6 @@ footer .footer_bottom p {
     nav .navbar-nav {
         gap: 0px;
     }
-    #banner{
-        width:auto;
-    }
 
     @keyframes shoot {
         0% {
@@ -1117,7 +1114,7 @@ footer .footer_bottom p {
     }
 
     #banner {
-        height: 450px;
+        height: auto;
     }
 
     #banner .content {
