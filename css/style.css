@@ -322,6 +322,7 @@ h2 {
     background-color: var(--rich_indigo);
     color: var(--yellow);
     border-radius: 0;
+    transition: all 0.8s ease-in-out;
 }
 .resume_btn_download::after{
     display: none;
